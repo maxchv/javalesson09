@@ -13,7 +13,7 @@ public class HomeController {
     String index(Model model) {
         model.addAttribute("title", "Home page");
         model.addAttribute("time", LocalDateTime.now());
-        return "/WEB-INF/views/index.jsp";
+        return "index";
     }
 
 }
