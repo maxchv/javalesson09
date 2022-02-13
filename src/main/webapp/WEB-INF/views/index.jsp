@@ -10,7 +10,11 @@
 <h1>${title}</h1>
 <form method="post" action="/todo">
     <label>
-        Task: <input name="task">
+        Title: <input name="title">
+    </label>
+    <br>
+    <label>
+        Deadline: <input name="deadline" type="date">
     </label>
     <button type="submit">Add</button>
 </form>
@@ -19,13 +23,17 @@
     <tr>
         <th>#</th>
         <th>Task</th>
+        <th>Deadline</th>
+        <th>Details</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach items="${tasks}" var="task" varStatus="status">
         <tr>
             <td>${status.count}</td>
-            <td>${task}</td>
+            <td>${task.title}</td>
+            <td>${task.deadline}</td>
+            <td><a href="/todo/${task.id}">Info</a></td>
         </tr>
     </c:forEach>
     </tbody>
