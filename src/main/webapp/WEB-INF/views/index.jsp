@@ -1,9 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
-    <link href="/resources/css/style.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <h1>${title}</h1>
@@ -30,7 +31,7 @@
     </tbody>
 </table>
 <footer>
-    <p>Current time: ${time}</p>
+    <p>Current time: <fmt:formatDate pattern="dd/MM/yyyy HH:mm:ss" value="${time}"/></p>
 </footer>
 </body>
 </html>
